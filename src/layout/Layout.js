@@ -1,12 +1,15 @@
 import React from "react";
 
+import "./Layout.css";
+
 const Layout = props => {
   const { children } = props;
 
   return (
     <>
       <div>Toolbar, Sidedrawer, Backdrop</div>
-      <main>{children}</main>
+
+      <main className="content">{children}</main>
     </>
   );
 };
