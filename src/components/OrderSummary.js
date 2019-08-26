@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Button from "./Button";
 
 import "./OrderSummary.css";
 
 const OrderSummary = props => {
-  const { ingredients } = props;
+  const { ingredients, purchaseCanceled, purchaseContinued } = props;
 
   const ingredientSummary = Object.keys(ingredients).map(igKey => (
     <li key={igKey}>
@@ -23,12 +24,22 @@ const OrderSummary = props => {
       <ul>{ingredientSummary}</ul>
 
       <p>Continue to Checkout?</p>
+
+      <Button type="danger" clicked={purchaseCanceled}>
+        CANCEL
+      </Button>
+
+      <Button type="success" clicked={purchaseContinued}>
+        CONTINUE
+      </Button>
     </>
   );
 };
 
 OrderSummary.propTypes = {
-  ingredients: PropTypes.object.isRequired
+  ingredients: PropTypes.object.isRequired,
+  purchaseCanceled: PropTypes.func.isRequired,
+  purchaseContinued: PropTypes.func.isRequired
 };
 
 export default OrderSummary;

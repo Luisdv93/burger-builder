@@ -1,0 +1,30 @@
+.button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 10px;
+  margin: 10px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.success {
+  color: #5c9210;
+}
+
+.success:hover {
+  background-color: #5c9210;
+  color: #fff;
+}
+
+.danger {
+  color: #944317;
+}
+
+.danger:hover {
+  background-color: #944317;
+  color: #fff;
+}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Burger from "../../components/Burger";
-import BuildControls from "../../components/BuildControls";
+import Burger from "../../components/Burger/Burger";
+import BuildControls from "../../components/Burger/BuildControls";
 import Modal from "../../components/Modal";
 import OrderSummary from "../../components/OrderSummary";
 
@@ -74,6 +74,14 @@ const BurgerBuilder = props => {
     setShowPurchaseModal(true);
   };
 
+  const purchaseCancelHandler = () => {
+    setShowPurchaseModal(false);
+  };
+
+  const purchaseContinueHandler = () => {
+    alert("Burger ordered!");
+  };
+
   // Do this to map the ingredients to a disabled state for the less button
   const disabledBtns = {
     ...ingredients
@@ -96,8 +104,12 @@ const BurgerBuilder = props => {
         ordered={purchaseHandler}
       />
 
-      <Modal show={showPurchaseModal}>
-        <OrderSummary ingredients={ingredients} />
+      <Modal show={showPurchaseModal} onClose={purchaseCancelHandler}>
+        <OrderSummary
+          ingredients={ingredients}
+          purchaseCanceled={purchaseCancelHandler}
+          purchaseContinued={purchaseContinueHandler}
+        />
       </Modal>
     </>
   );
