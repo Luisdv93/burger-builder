@@ -109,6 +109,7 @@ const BurgerBuilder = props => {
           ingredients={ingredients}
           purchaseCanceled={purchaseCancelHandler}
           purchaseContinued={purchaseContinueHandler}
+          price={price}
         />
       </Modal>
     </>

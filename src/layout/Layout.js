@@ -1,4 +1,6 @@
 import React from "react";
+import Toolbar from "./Toolbar";
+import Sidedrawer from "./Sidedrawer";
 
 import "./Layout.css";
 
@@ -7,7 +9,9 @@ const Layout = props => {
 
   return (
     <>
-      <div>Toolbar, Sidedrawer, Backdrop</div>
+      <Toolbar />
+
+      <Sidedrawer />
 
       <main className="content">{children}</main>
     </>
