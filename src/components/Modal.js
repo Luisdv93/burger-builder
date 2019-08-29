@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import Backdrop from "./Backdrop";
 
@@ -6,6 +6,8 @@ import "./Modal.css";
 
 const Modal = props => {
   const { children, show, onClose } = props;
+
+  useEffect(() => {}, [show]);
 
   return (
     <>
@@ -30,4 +32,4 @@ Modal.propTypes = {
   onClose: PropTypes.func.isRequired
 };
 
-export default Modal;
+export default React.memo(Modal);

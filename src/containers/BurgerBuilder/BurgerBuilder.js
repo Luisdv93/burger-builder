@@ -104,14 +104,16 @@ const BurgerBuilder = props => {
         ordered={purchaseHandler}
       />
 
-      <Modal show={showPurchaseModal} onClose={purchaseCancelHandler}>
-        <OrderSummary
-          ingredients={ingredients}
-          purchaseCanceled={purchaseCancelHandler}
-          purchaseContinued={purchaseContinueHandler}
-          price={price}
-        />
-      </Modal>
+      {showPurchaseModal ? (
+        <Modal show={showPurchaseModal} onClose={purchaseCancelHandler}>
+          <OrderSummary
+            ingredients={ingredients}
+            purchaseCanceled={purchaseCancelHandler}
+            purchaseContinued={purchaseContinueHandler}
+            price={price}
+          />
+        </Modal>
+      ) : null}
     </>
   );
 };

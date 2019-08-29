@@ -47,4 +47,4 @@ OrderSummary.propTypes = {
   price: PropTypes.number.isRequired
 };
 
-export default OrderSummary;
+export default React.memo(OrderSummary);
